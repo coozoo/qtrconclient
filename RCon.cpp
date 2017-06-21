@@ -39,7 +39,7 @@ void qtRConSocketClient::rconConnect(QString &address, QString password_str)
 
             setRconCurrentState(rconState::Connecting);
 
-        }
+
     _socket->open(QTcpSocket::ReadWrite);
     if (address.contains(":"))
         {
@@ -59,12 +59,12 @@ void qtRConSocketClient::rconConnect(QString &address, QString password_str)
         {
             _socket->connectToHost(address, 27015);
         }
-
+    }
 }
 
 
 // send a rcon packet to the server
-qint32 qtRConSocketClient::rconWrite(qint32 id, const qint32 type , QString command = QString(""))
+void qtRConSocketClient::rconWrite(qint32 id, const qint32 type , QString command = QString(""))
 {
     RconPacket packet;
     packet.id = id;
@@ -77,7 +77,6 @@ qint32 qtRConSocketClient::rconWrite(qint32 id, const qint32 type , QString comm
     _socket->write((char *)&packet.type, 4);
     _socket->write(packet.bodyStr.toUtf8(), packet.bodyStr.toUtf8().length() + 1);
     _socket->write(packet.emptyStr.toUtf8(), packet.emptyStr.toUtf8().length() + 1);
-    return packet.id;
 }
 
 // send a command to the server using internal ID

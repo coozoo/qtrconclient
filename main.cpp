@@ -1,6 +1,7 @@
 #include "qtrconclient.h"
 #include <QApplication>
 
+//really a lot problems with qdebug on new linux distros so this to handle them out
 void customLogHandler(QtMsgType type, const QMessageLogContext& context,
                       const QString& msg)
 {

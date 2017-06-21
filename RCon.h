@@ -13,13 +13,12 @@
 // rcon protocol described at
 // http://developer.valvesoftware.com/wiki/Source_RCON_Protocol
 
+//Packet Types
 const qint32 RCON_SERVERDATA_AUTH = 3;
 const qint32 RCON_SERVERDATA_AUTH_RESPONSE = 2;
 const qint32 RCON_SERVERDATA_EXECCOMMAND = 2;
 const qint32 RCON_SERVERDATA_RESPONSE_VALUE = 0;
 
-const int PACKETREADTIMEOUT = 1;
-const int GENERALTIMEOUT = 1;
 
 //just some radom number to check authorization
 const int AUTHPACKETID = 33;
@@ -28,7 +27,7 @@ const int AUTHPACKETID = 33;
 
 
 // rcon packet struct
-typedef struct
+typedef struct RCONPACKET
 {
     qint32 size;
     qint32 id;
@@ -55,8 +54,8 @@ class qtRConSocketClient : public QTcpSocket
                WRITE setRconSocketLastError
               )
     Q_PROPERTY(qint32 Id
-               READ getRconSocketLastError
-               WRITE setRconSocketLastError
+               READ getId
+               WRITE setId
               )
 
     // add rcon errors to enum
@@ -138,8 +137,7 @@ private:
 
 
 protected:
-    //QVector <RconPacket> PacketRead();
-    qint32 rconWrite(qint32 id, qint32 type , QString command);
+    void rconWrite(qint32 id, qint32 type , QString command);
 
 private slots:
     void on_rconDataComing();
