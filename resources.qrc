@@ -1,0 +1,9 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="/">
+   <file>images/Disconnected.png</file>
+   <file>images/Connected.png</file>
+   <file>images/Connecting.png</file>
+   <file>images/Authorizing.png</file>
+   <file>images/Disconnecting.png</file>
+</qresource>
+</RCC>
