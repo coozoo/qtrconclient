@@ -32,6 +32,9 @@ int main(int argc, char *argv[])
 
     a.setProperty("appversion","0.1b" + platform);
     a.setProperty("appname","Qt Rcon Client");
+    #ifdef Q_OS_LINUX
+         a.setWindowIcon(QIcon(":/images/icon.png"));
+    #endif
 
     QtRCONclient w;
     w.setWindowTitle(a.property("appname").toString() + " " + a.property("appversion").toString());

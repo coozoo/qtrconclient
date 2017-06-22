@@ -9,6 +9,7 @@
 #include <QLoggingCategory>
 #include <QLabel>
 #include <QCloseEvent>
+#include <QIcon>
 #include "RCon.h"
 
 namespace Ui {

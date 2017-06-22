@@ -16,9 +16,9 @@ QtRCONclient::QtRCONclient(QWidget *parent) :
     ui->disconnect_pushButton->setEnabled(false);
     ui->send_pushButton->setEnabled(false);
 
-    ui->address_lineEdit->setText("192.168.1.38");
+    //ui->address_lineEdit->setText("192.168.1.38");
     ui->password_lineEdit->setEchoMode(QLineEdit::Password);
-    ui->password_lineEdit->setText("123");
+    //ui->password_lineEdit->setText("123");
 
 
     connect(rcon,SIGNAL(rconSocketError(int,QString)),this,SLOT(on_rconSocketError(int,QString)));

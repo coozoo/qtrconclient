@@ -24,5 +24,7 @@ HEADERS  += \
 FORMS    += \
     qtrconclient.ui
 
+win32:RC_FILE = myapp.rc
+
 RESOURCES += \
     resources.qrc
