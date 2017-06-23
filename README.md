@@ -1,4 +1,4 @@
-# qtrconclient
+# QT RCON Client (qtrconclient)
 ## Summary
 Simple RCON client written in Qt.
 
